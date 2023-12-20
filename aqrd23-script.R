@@ -175,6 +175,13 @@ summary_stats_tbl <- summary_data |>
 # Printing Table 1
 print(summary_stats_tbl)
 
+# Save the gt table directly as LaTeX
+summary_stats_tex <- gt(as.data.frame(summary_stats_tbl)) %>%
+  gt::as_latex()
+
+# Save the LaTeX object to a file
+writeLines(summary_stats_tex, "tables/table_1.tex")
+
 # Table 7 | Accuracy for Black Defendants ---------------------------
 
 # Filtering for only Black defendants
@@ -223,6 +230,13 @@ blk_summary_stats_tbl <- summary_data_b |>
 
 # Printing Table 7
 print(blk_summary_stats_tbl)
+
+# Save the gt table directly as LaTeX
+blk_summary_stats_tex <- gt(as.data.frame(blk_summary_stats_tbl)) %>%
+  gt::as_latex()
+
+# Save the LaTeX object to a file
+writeLines(blk_summary_stats_tex, "tables/table_7.tex")
 
 # Table 8 | Accuracy for White Defendants ---------------------------
 
@@ -273,6 +287,13 @@ wht_summary_stats_tbl <- summary_data_w |>
 # Printing Table 8
 print(wht_summary_stats_tbl)
 
+# Save the gt table directly as LaTeX
+wht_summary_stats_tex <- gt(as.data.frame(wht_summary_stats_tbl)) %>%
+  gt::as_latex()
+
+# Save the LaTeX object to a file
+writeLines(wht_summary_stats_tex, "tables/table_8.tex")
+
 
 
 # COMPAS Accuracy | Table 2  ---------------------------
@@ -318,7 +339,7 @@ accuracies <- broward_subset |>
 
 # Finalizing Table 2
 accuracy_data <- tibble(
-  . = c("Accuracy (overall)", "AUC-ROC (overall)", "Accuracy", "False positive", "False negative"),
+  ` ` = c("Accuracy (overall)", "AUC-ROC (overall)", "Accuracy", "False positive", "False negative"),
   White = c(accuracies$accuracy_overall[2], mean(roc_auc_values), 
             accuracies$race_accuracy[2], accuracies$false_pos[2], accuracies$false_neg[2]),
   Black = c(accuracies$accuracy_overall[1], mean(roc_auc_values),
@@ -342,6 +363,13 @@ accuracies_table <- accuracy_data |>
 
 # Printing Table 2
 print(accuracies_table)
+
+# Save the gt table directly as LaTeX
+acc_tex <- gt(as.data.frame(accuracies_table)) %>%
+  gt::as_latex()
+
+# Save the LaTeX object to a file
+writeLines(acc_tex, "tables/table_2.tex")
 
 
 
@@ -458,6 +486,13 @@ ci_table <- ci_table |>
 # Printing Table 3
 print(ci_table)
 
+# Save the gt table directly as LaTeX
+ci_tex <- gt(as.data.frame(ci_table)) %>%
+  gt::as_latex()
+
+# Save the LaTeX object to a file
+writeLines(ci_tex, "tables/table_3.tex")
+
 
 
 # Performance metrics | Table 4 ---------------------------
@@ -488,6 +523,13 @@ metrics_table <- metrics |>
 # Printing Table 4
 print(metrics_table)
 
+# Save the gt table directly as LaTeX
+metrics_tex <- gt(as.data.frame(metrics_table)) %>%
+  gt::as_latex()
+
+# Save the LaTeX object to a file
+writeLines(metrics_tex, "tables/table_4.tex")
+
 
 
 # Precision Tables | Tables 5 & 6 ---------------------------
@@ -516,6 +558,14 @@ precision_table7 <- precision_df7 |>
 # Printing Table 5
 print(precision_table7)
 
+# Save the gt table directly as LaTeX
+prec7_tex <- gt(as.data.frame(precision_table7)) %>%
+  gt::as_latex()
+
+# Save the LaTeX object to a file
+writeLines(prec7_tex, "tables/table_5.tex")
+
+
 # Creating precision table for 2 feature model
 precision_df2 <- tibble(
   Classification = c("Actually No", "Actually Yes"),
@@ -539,3 +589,10 @@ precision_table2 <- precision_df2 |>
   ) 
 # Printing Table 6
 print(precision_table2)
+
+# Save the gt table directly as LaTeX
+prec2_tex <- gt(as.data.frame(precision_table2)) %>%
+  gt::as_latex()
+
+# Save the LaTeX object to a file
+writeLines(prec2_tex, "tables/table_6.tex")
