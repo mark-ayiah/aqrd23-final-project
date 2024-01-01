@@ -225,7 +225,7 @@ predictive power and may be too haphazard to be relied on in the
 criminal justice field.
 \end{abstract}
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[enhanced, sharp corners, interior hidden, boxrule=0pt, frame hidden, borderline west={3pt}{0pt}{shadecolor}, breakable]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, interior hidden, boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, enhanced, sharp corners, breakable]}{\end{tcolorbox}}\fi
 
 
 
@@ -264,7 +264,7 @@ scholars have claimed that the algorithm is biased against Black
 defendants. In 2016, Angwin analyzed COMPAS by comparing the risk scores
 it assigned to the same Broward County defendant dataset used in
 \citep{dressel2018accuracy}. They found that Black defendants are nearly
-twice as likely as White descendants to be misclassified as high risk.
+twice as likely as White defendants to be misclassified as high risk.
 Regardless of race, only 61\% of those predicted to recidivate actually
 did so, and the algorithm was overall only a little more accurate than a
 ``coin flip'' (Angwin et al., 2016).\footnote{Angwin, J., Larson, J.,
@@ -304,7 +304,7 @@ models. From these matrices, we derive precision and recall metrics,
 which reveal that our models can accurately identify slightly over half
 of the defendants who recidivate. However, they also tend to falsely
 classify about half of these individuals as not at risk of recidivism.
-Knowing our classifier produces accuracies in close proximity to
+Knowing our classifier produces accuracy rates in close proximity to
 COMPAS', these results raise serious questions about the reliability of
 machine learning algorithms in making these critical decisions.
 
@@ -387,7 +387,7 @@ independence of observations, the binary nature of the response
 variable, the lack of outliers or strongly influential points, minimal
 multicollinearity between the covariates, and a linear relationship
 between the explanatory variables and the log odds of the response
-variable. All of these assumptions hold for our dataset.
+variable. All of these assumptions reasonably hold for our dataset.
 
 \hypertarget{results}{%
 \section{Results}\label{results}}
